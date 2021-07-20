@@ -42,17 +42,37 @@ tsc --init
 │ └────index.ts
 ├────package.json
 ├────tsconfig.json
-└────tslint.json
+└────.eslint.json
 ```
+
+## `tsconfig.json`, `eslint.json` 설정
+
+1. `tsc --init` 으로 기본 생성한 후
+
+2.
+  ```json
+  // tsconfig.json
+  {
+    "compilerOptions": {
+      "target": "es5", 
+      "module": "commonjs", 
+      "lib": ["ES2015"],
+      "sourceMap": true,
+      "outDir": "./dist",   
+      "strict": true,
+    },
+    "include" : ["src"]
+  }
+  ```
+
+3. `eslint --init` 으로 자동 설정
 
 ## 실행 명령어
 
-```bash
-npx tsc
-```
+`npx tsc` 이후 `node dist/index.js`
 
 ## 다른 방법
 
-- [`ts-node`](https://github.com/TypeStrong/ts-node)
-- [`typescript-node-starter`](https://github.com/microsoft/TypeScript-Node-Starter)
+- [`ts-node`](https://github.com/TypeStrong/ts-node) - 명령 한 번으로 컴파일 및 실행
+- [`typescript-node-starter`](https://github.com/microsoft/TypeScript-Node-Starter) - 스캐폴딩
 
