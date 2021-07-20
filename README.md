@@ -5,18 +5,18 @@
 # 📌목차
 
 1. 소개
-2. 타입스크립트: 3000미터 상공에서 내려다보기
-3. 타입의 모든 것
-4. 함수
+2. [타입스크립트: 3000미터 상공에서 내려다보기](./chapter2)
+3. [타입의 모든 것](./chapter3)
+4. [함수](./chapter4)
 5. [클래스와 인터페이스](./chapter5)
-6. 고급 타입
-7. 에러 처리
-8. 비동기 프로그래밍, 동시성과 병렬성
-9. 프론트엔드 프레임워크와 백엔드 프레임워크
-10. Namespaces, Modules
-11. 자바스크립트와 상호 동작
-12. 타입스크립트 빌드 및 실행
-13. 결론
+6. [고급 타입](./chapter6)
+7. [에러 처리](./chapter7)
+8. [비동기 프로그래밍, 동시성과 병렬성](./chapter8)
+9. [프론트엔드 프레임워크와 백엔드 프레임워크](./chapter9)
+10. [Namespaces, Modules](./chapter10)
+11. [자바스크립트와 상호 동작](./chapter11)
+12. [타입스크립트 빌드 및 실행](./chapter12)
+13. [결론](./chapter13)
 
 # 📚공부하기
 
@@ -49,21 +49,20 @@ tsc --init
 
 1. `tsc --init` 으로 기본 생성한 후
 
-2.
-  ```json
-  // tsconfig.json
-  {
-    "compilerOptions": {
-      "target": "es5", 
-      "module": "commonjs", 
-      "lib": ["ES2015"],
-      "sourceMap": true,
-      "outDir": "./dist",   
-      "strict": true,
-    },
-    "include" : ["src"]
-  }
-  ```
+2. ```json
+   // tsconfig.json
+   {
+     "compilerOptions": {
+       "target": "es5",
+       "module": "commonjs",
+       "lib": ["ES2015"],
+       "sourceMap": true,
+       "outDir": "./dist",
+       "strict": true
+     },
+     "include": ["src"]
+   }
+   ```
 
 3. `eslint --init` 으로 자동 설정
 
@@ -75,4 +74,3 @@ tsc --init
 
 - [`ts-node`](https://github.com/TypeStrong/ts-node) - 명령 한 번으로 컴파일 및 실행
 - [`typescript-node-starter`](https://github.com/microsoft/TypeScript-Node-Starter) - 스캐폴딩
-
