@@ -18,7 +18,41 @@
 12. 타입스크립트 빌드 및 실행
 13. 결론
 
-## 📚공부하기
+# 📚공부하기
 
 근무하며 책 읽고, 연습 문제와 실습에 관한 것들을 정리할 예정
+
+# 🔨기본 셋팅
+
+## 각 챕터 시작 전
+
+```bash
+npm init
+
+npm install -D typescript eslint @types/node
+
+tsc --init
+```
+
+## 폴더 구성
+
+```
+├────node_modules/
+├────src/
+│ └────index.ts
+├────package.json
+├────tsconfig.json
+└────tslint.json
+```
+
+## 실행 명령어
+
+```bash
+npx tsc
+```
+
+## 다른 방법
+
+- [`ts-node`](https://github.com/TypeStrong/ts-node)
+- [`typescript-node-starter`](https://github.com/microsoft/TypeScript-Node-Starter)
 
