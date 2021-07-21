@@ -49,3 +49,24 @@ function fill(length: number, value: string): string[] {
 
 console.log(call(fill, 10, "a"));
 // console.log(call(fill, 10, 5)); // string이 아니라 오류
+
+// 5번 문제 - 타입 안전성을 지원하는 작은 assertion 라이브러리 `is`를 구현해보자
+
+const is = <T, K extends T>(a: T, ...args: K[]): boolean => {
+  return args.every((item) => item === a);
+};
+
+// string 과 string 비교
+console.log(is("string", "otherString")); // false
+
+// boolean 과 boolean 비교
+console.log(is(true, false)); // false
+
+// number 과 number 비교
+console.log(is(42, 42)); // true
+
+// 서로 다른 두 타입을 비교하면 컴파일 에러 발생
+is(10, "foo"); // ts2345 컴파일 에러
+
+// [어려움] 임의의 개수의 인수 전달 가능
+console.log(is([1], [1, 2], [1, 2, 3])); // false
