@@ -1,3 +1,4 @@
+// 5.1
 type Color = "Black" | "White";
 type FileColumn = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
 type RankRow = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
@@ -55,3 +56,15 @@ class Bishop extends Piece {}
 class Knight extends Piece {}
 class Rook extends Piece {}
 class Pawn extends Piece {}
+
+// 5.3
+
+class Set {
+  has(value: number): boolean {}
+
+  add(value: number): this {}
+}
+
+class MutableSet extends Set {
+  delete(value: number): boolean {}
+}
