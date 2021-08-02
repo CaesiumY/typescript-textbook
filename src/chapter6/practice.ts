@@ -75,8 +75,8 @@ type OO = O["a"]["b"]; // {c: string}
 
 type Exclusive<T, U> = Exclude<T, U> | Exclude<U, T>;
 
-type EX = Exclusive<1 | 2 | 3, 2 | 3 | 4>;
-type CL = Exclusive<1 | 2, 2 | 4>;
+type EX = Exclusive<1 | 2 | 3, 2 | 3 | 4>; // 1 | 4
+type CL = Exclusive<1 | 2, 2 | 4>; // 1 | 4
 
 // 그냥 각각 차집합을 합집합으로 만들어주면 된다.
 
@@ -94,3 +94,5 @@ const globalCache = {
     return key;
   },
 };
+
+// 할당을 안 해줘서 생기는 오류니 처음부터 할당해주면 된다.
