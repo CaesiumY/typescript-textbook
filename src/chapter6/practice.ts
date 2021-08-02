@@ -73,4 +73,24 @@ type OO = O["a"]["b"]; // {c: string}
 // 예를 들어 Exclusive<1 | 2 | 3, 2 | 3 | 4>의 결과는 1 | 4 다.
 // 타입 검사기가 Exclusive<1 | 2 , 2 | 4> 를 어떻게 평가하는지 단계별로 서술해보자.
 
-// NOTE - 4. '6.6.3 확실한 할당 어서션' 에서 소개한 예제를 할당 어서션을 사용하지 않고 구현해보자
+type Exclusive<T, U> = Exclude<T, U> | Exclude<U, T>;
+
+type EX = Exclusive<1 | 2 | 3, 2 | 3 | 4>;
+type CL = Exclusive<1 | 2, 2 | 4>;
+
+// 그냥 각각 차집합을 합집합으로 만들어주면 된다.
+
+// NOTE - 4. '6.6.3 확실한 할당 어서션' 에서 소개한 예제를 확실한 할당 어서션을 사용하지 않고 구현해보자
+let userId: string = fetchUser();
+
+userId.toUpperCase();
+
+function fetchUser() {
+  return globalCache.get("userId");
+}
+
+const globalCache = {
+  get(key: string) {
+    return key;
+  },
+};
